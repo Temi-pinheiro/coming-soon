@@ -52,7 +52,7 @@ export const Landing = () => {
               id='deesgn'
               href='https://x.com/Deesgnplus'
               target='_blank'
-              className='text-orange-400 italic font-semibold text-xl md:text-4xl block'
+              className='text-orange-400 italic font-semibold text-xl md:text-4xl block underline underline-offset-2'
             >
               Deesgn+
             </a>
