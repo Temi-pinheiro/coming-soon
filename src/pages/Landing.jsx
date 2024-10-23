@@ -1,56 +1,79 @@
-import { useLayoutEffect, useState } from 'react';
 import { Preloader } from '../components/Preloader';
-import { AnimatePresence } from 'framer-motion';
 import gsap from 'gsap';
+import { useGSAP } from '@gsap/react';
 
 export const Landing = () => {
-  const [loading, setLoading] = useState(true);
+  //   const [loading, setLoading] = useState(true);
   const master = gsap.timeline();
-  useLayoutEffect(() => {
-    // setTimeout(() => setLoading(false), 3000);
+  useGSAP(() => {
+    const comingSoon = document.querySelector('#comingsoon');
+    const deesgn = document.querySelector('#deesgn');
+    // Refs allow you to access DOM nodes
+    // then we can animate them like so...
+    const setInitialStates = () => {
+      gsap.set(comingSoon, { yPercent: 110 });
+      gsap.set(deesgn, { yPercent: 100 });
+    };
+    const preloaderAnimation = () => {
+      const tl = gsap.timeline({ defaults: { ease: 'power2.out' } });
+      tl.to(deesgn, {
+        yPercent: 0,
+        delay: 0.5,
+      }).to(comingSoon, {
+        yPercent: 0,
+        delay: 0.6,
+      });
+
+      return tl;
+    };
+    master.add(setInitialStates()).add(preloaderAnimation(), 2.5);
   }, []);
   return (
-    <div className='w-full h-full'>
-      <AnimatePresence mode='wait'>
-        {loading ? (
-          <Preloader timeline={master} />
-        ) : (
-          <div className='flex flex-col w-full h-full text-slate-50 relative'>
-            <div className='flex flex-col w-full h-full px-4 relative z-10 mix-blend-lighten '>
-              <h1 className='max-w-[70%] text-[140px] leading-[0.76] font-bold text-slate-50'>
-                <span>RETHINK</span> <br />
-                <span className='text-orange-400 italic'>DEESGN</span>
-              </h1>
-              <h1 className='mt-10 max-w-[70%] text-[140px] leading-[0.76] font-bold'>
-                RETHINK <span className=' '>BRANDGN</span>
-              </h1>
-              <div className='flex mt-auto w-full items-center justify-between pb-2'>
-                <h5 className='text-4xl font-semibold text-slate-200'>
-                  COMING SOON
-                </h5>
-                <h5 className='text-orange-400 italic font-semibold text-4xl'>
-                  Deesgn+
-                </h5>
-              </div>
-            </div>
-            {/* <div className='absolute inset-0 w-full h-full max-w-[90%] overflow-clip ml-auto'>
-              <video
-                src='/home.mp4'
-                autoPlay
-                loop
-                muted
-                controls={false}
-                playsInline
-                className='object-cover w-full h-full'
-              /> */}
-            {/* <div className='absolute inset-0 z-3 backdrop-brightness-50 backdrop-blur-sm w-full h-full'></div> */}
-            {/* <div className='absolute inset-0 pointer-events-none  '>
-                <div className='w-full h-full bg-[radial-gradient(circle,rgba(0,0,0,0)_50%,rgba(0,0,0,0.8)_100%)] '></div>
-              </div>
-            </div> */}
+    <div className='w-full h-full '>
+      <Preloader timeline={master} />
+
+      <div className='flex flex-col w-full h-full text-slate-50 relative bg-slate-950'>
+        <div className='flex flex-col w-full h-full z-[1] relative mix-blend-difference px-4 md:px-14 '>
+          {/* <h1 className='max-w-[70%] text-[140px] leading-[0.76] font-bold text-slate-50'>
+            <span>RETHINK</span> <br />
+            <span className='text-orange-400 italic'>DEESGN</span>
+          </h1>
+          <h1 className='mt-10 max-w-[70%] text-[140px] leading-[0.76] font-bold'>
+            RETHINK <span className=' '>BRANDGN</span>
+          </h1> */}
+          <div className='flex flex-row-reverse mt-auto w-full items-center justify-between pb-2 overflow-hidden'>
+            <h5
+              id='comingsoon'
+              className='text-xl md:text-4xl font-semibold text-slate-200 '
+            >
+              Coming Soon
+            </h5>
+            <a
+              id='deesgn'
+              href='https://x.com/Deesgnplus'
+              target='_blank'
+              className='text-orange-400 italic font-semibold text-xl md:text-4xl block'
+            >
+              Deesgn+
+            </a>
           </div>
-        )}
-      </AnimatePresence>
+        </div>
+        <div className='absolute inset-0 w-[94%] h-full overflow-clip rounded-t-3xl max-md:rounded-b-3xl mt-10 max-md:mb-10 max-md:max-h-[90%] mx-auto'>
+          <video
+            src='/home.mp4'
+            autoPlay
+            loop
+            muted
+            controls={false}
+            playsInline
+            className='object-cover w-full h-full'
+          />
+          {/* <div className='absolute inset-0 z-3 backdrop-brightness-50 backdrop-blur-sm w-full h-full'></div> */}
+          <div className='absolute inset-0 pointer-events-none  '>
+            <div className='w-full h-full bg-[gradient(to-right,rgba(0,0,0,0)0%,rgba(2,6,23,0.8)80%)] '></div>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };
