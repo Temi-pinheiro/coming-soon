@@ -50,6 +50,14 @@ export const Landing = () => {
             </h5>
             <a
               id='deesgn'
+              href='mailto:hello@deesgn.plus'
+              target='_blank'
+              className='text-orange-400 italic font-semibold text-xl md:text-4xl block underline underline-offset-2'
+            >
+              Get in touch
+            </a>
+            <a
+              id='deesgn'
               href='https://x.com/Deesgnplus'
               target='_blank'
               className='text-orange-400 italic font-semibold text-xl md:text-4xl block underline underline-offset-2'
@@ -58,9 +66,9 @@ export const Landing = () => {
             </a>
           </div>
         </div>
-        <div className='absolute inset-0 w-[94%] h-full overflow-clip rounded-t-3xl max-md:rounded-b-3xl mt-10 max-md:mb-10 max-md:max-h-[90%] mx-auto'>
+        <div className='absolute inset-0 w-[94%] h-full overflow-clip rounded-t-3xl max-md:rounded-b-3xl mt-10 max-md:mb-10 max-h-[90%] mx-auto'>
           <video
-            src='/home.mp4'
+            src='/afro_promo.mp4'
             autoPlay
             loop
             muted
