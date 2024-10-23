@@ -43,14 +43,14 @@ export const Preloader = ({ timeline }) => {
 
   return (
     <div className='overflow-hidden '>
-      <p className='overflow-hidden z-[3] leading-none text-orange-400 fixed top-[50%] left-[50%] [transform:translate(-50%,-50%)]'>
+      <p className='overflow-hidden z-[3] leading-none text-white fixed top-[50%] left-[50%] [transform:translate(-50%,-50%)]'>
         <span id='preloaderText' className='block'>
           Rethink Design
         </span>
       </p>
       <div
         id='preloaderBackground'
-        className='fixed inset-0 z-[2] flex h-screen bg-slate-950 items-center justify-center'
+        className='fixed inset-0 z-[2] flex h-screen bg-[#ff641f] items-center justify-center'
       ></div>
     </div>
   );

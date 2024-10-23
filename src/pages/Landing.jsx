@@ -32,27 +32,27 @@ export const Landing = () => {
     <div className='w-full h-full '>
       <Preloader timeline={master} />
 
-      <div className='flex flex-col w-full h-full text-slate-50 relative bg-slate-950'>
-        <div className='flex flex-col w-full h-full z-[1] relative mix-blend-difference px-4 md:px-14 '>
+      <div className='flex flex-col w-full h-full text-slate-50 relative bg-[#fff]'>
+        <div className='flex flex-col w-full h-full z-[1] relative  px-4 md:px-14 '>
           {/* <h1 className='max-w-[70%] text-[140px] leading-[0.76] font-bold text-slate-50'>
             <span>RETHINK</span> <br />
-            <span className='text-orange-400 italic'>DEESGN</span>
+            <span className='text-[#ff641f] italic'>DEESGN</span>
           </h1>
           <h1 className='mt-10 max-w-[70%] text-[140px] leading-[0.76] font-bold'>
             RETHINK <span className=' '>BRANDGN</span>
           </h1> */}
           <div className='flex flex-row-reverse mt-auto w-full items-center justify-between pb-2 overflow-hidden'>
-            <h5
+            {/* <h5
               id='comingsoon'
-              className='text-xl md:text-4xl font-semibold text-slate-200 '
+              className='text-xl md:text-4xl font-semibold text-slate-950 '
             >
-              Coming Soon
-            </h5>
+              See you Soon
+            </h5> */}
             <a
               id='deesgn'
               href='mailto:hello@deesgn.plus'
               target='_blank'
-              className='text-orange-400 italic font-semibold text-xl md:text-4xl block underline underline-offset-2'
+              className='text-[#ff641f] italic font-semibold text-xl md:text-4xl block underline underline-offset-2'
             >
               Get in touch
             </a>
@@ -60,7 +60,7 @@ export const Landing = () => {
               id='deesgn'
               href='https://x.com/Deesgnplus'
               target='_blank'
-              className='text-orange-400 italic font-semibold text-xl md:text-4xl block underline underline-offset-2'
+              className='text-[#ff641f] italic font-semibold text-xl md:text-4xl block underline underline-offset-2'
             >
               Deesgn+
             </a>
