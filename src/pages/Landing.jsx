@@ -57,7 +57,15 @@ export const Landing = () => {
               Get in touch
             </a>
             <a
-              id='deesgn'
+              id='WHO WE ARE'
+              href='https://drive.google.com/file/d/13VYjz7TSTMUMNvS8PtLIbp9366xiyURM/view?usp=sharing'
+              target='_blank'
+              className='text-[#ff641f] italic font-semibold text-xl md:text-4xl block underline underline-offset-2'
+            >
+              WHO WE ARE
+            </a>
+            <a
+              id='SOCIALS'
               href='https://x.com/Deesgnplus'
               target='_blank'
               className='text-[#ff641f] italic font-semibold text-xl md:text-4xl block underline underline-offset-2'
