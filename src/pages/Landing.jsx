@@ -8,21 +8,28 @@ export const Landing = () => {
   useGSAP(() => {
     const comingSoon = document.querySelector('#comingsoon');
     const deesgn = document.querySelector('#deesgn');
+    const whoweare = document.querySelector('#whoweare');
     // Refs allow you to access DOM nodes
     // then we can animate them like so...
     const setInitialStates = () => {
-      gsap.set(comingSoon, { yPercent: 110 });
+      gsap.set(comingSoon, { yPercent: 100 });
       gsap.set(deesgn, { yPercent: 100 });
+      gsap.set(whoweare, { yPercent: 100 });
     };
     const preloaderAnimation = () => {
       const tl = gsap.timeline({ defaults: { ease: 'power2.out' } });
       tl.to(deesgn, {
         yPercent: 0,
         delay: 0.5,
-      }).to(comingSoon, {
-        yPercent: 0,
-        delay: 0.6,
-      });
+      })
+        .to(comingSoon, {
+          yPercent: 0,
+          delay: 0.6,
+        })
+        .to(whoweare, {
+          yPercent: 0,
+          delay: 0.7,
+        });
 
       return tl;
     };
@@ -49,7 +56,7 @@ export const Landing = () => {
               See you Soon
             </h5> */}
             <a
-              id='deesgn'
+              id='comingsoon'
               href='mailto:hello@deesgn.plus'
               target='_blank'
               className='text-[#ff641f] italic font-semibold text-xl md:text-4xl block underline underline-offset-2'
@@ -57,7 +64,7 @@ export const Landing = () => {
               Get in touch
             </a>
             <a
-              id='WHO WE ARE'
+              id='whoweare'
               href='https://drive.google.com/file/d/13VYjz7TSTMUMNvS8PtLIbp9366xiyURM/view?usp=sharing'
               target='_blank'
               className='text-[#ff641f] italic font-semibold text-xl md:text-4xl block underline underline-offset-2'
@@ -65,7 +72,7 @@ export const Landing = () => {
               WHO WE ARE
             </a>
             <a
-              id='SOCIALS'
+              id='deesgn'
               href='https://x.com/Deesgnplus'
               target='_blank'
               className='text-[#ff641f] italic font-semibold text-xl md:text-4xl block underline underline-offset-2'
